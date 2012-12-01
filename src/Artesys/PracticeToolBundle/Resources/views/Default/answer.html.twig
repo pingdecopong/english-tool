@@ -1,0 +1,41 @@
+
+{% extends '::base.html.twig'  %}
+
+{% block body %}
+
+
+    <div>
+        {{ question.translation }}
+    </div>
+    <div>
+        {{ question.sentence }}
+    </div>
+    <div>
+        {{ inputData }}
+    </div>
+
+
+    <form action="{{ path('question') }}" method="post" novalidate name="form">
+        <input type="hidden" id="hiddenid" name="id" value="" />
+        <div>
+            <button type="button" onclick="onRetryClick()" value="Previous" >Retry</button>
+            {% if nextid %}
+                <input type="submit" onclick="onNextClick()" value="Next" />
+            {% endif %}
+        </div>
+        <div>
+            <a href="{{ path('select') }}">select</a>
+        </div>
+    </form>
+    <script type="text/javascript">
+            function onRetryClick(){
+                var selectObject = document.getElementById('hiddenid');
+                selectObject.value = {{ previousid }};
+                document.form.submit();
+            }
+            function onNextClick(){
+                var selectObject = document.getElementById('hiddenid');
+                selectObject.value = {{ nextid }};
+            }
+    </script>
+{% endblock %}

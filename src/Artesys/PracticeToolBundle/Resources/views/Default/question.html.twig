@@ -1,0 +1,26 @@
+
+{% extends '::base.html.twig'  %}
+
+{% block body %}
+
+    {{ question.translation }}
+
+
+    <form action="{{ path('answer') }}" method="post" {{ form_enctype(form) }} novalidate >
+
+        {{ form_errors(form) }}
+
+        {% for item in form  %}
+            {{ form_widget(form.inputText) }}
+        {% endfor %}
+
+        {{ form_rest(form) }}
+
+        <div>
+            <input type="submit" value="Check" />
+        </div>
+        <div>
+            <a href="{{ path('select') }}">select</a>
+        </div>
+    </form>
+{% endblock %}
