@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/test/", name="select")
+     * @Route("/", name="select")
      * @Template()
      */
     public function indexAction()
@@ -57,7 +57,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/test/question", name="question")
+     * @Route("/question", name="question")
      * @Template()
      */
     public function questionAction()
@@ -85,7 +85,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/test/answer", name="answer")
+     * @Route("/answer", name="answer")
      * @Template()
      */
     public function answerAction()
