@@ -18,9 +18,9 @@
     <form action="{{ path('question') }}" method="post" novalidate name="form">
         <input type="hidden" id="hiddenid" name="id" value="" />
         <div>
-            <button type="button" onclick="onRetryClick()" value="Previous" >Retry</button>
+            <button type="button" class="btn" onclick="onRetryClick()" value="Previous" >Retry</button>
             {% if nextid %}
-                <input type="submit" onclick="onNextClick()" value="Next" />
+                <button type="button" class="btn btn-primary" onclick="onNextClick()" value="Previous" >Next</button>
             {% endif %}
         </div>
         <div>
@@ -36,6 +36,7 @@
             function onNextClick(){
                 var selectObject = document.getElementById('hiddenid');
                 selectObject.value = {{ nextid }};
+                document.form.submit();
             }
     </script>
 {% endblock %}
