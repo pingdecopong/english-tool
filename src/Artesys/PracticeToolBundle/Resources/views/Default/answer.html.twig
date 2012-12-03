@@ -4,27 +4,37 @@
 {% block body %}
 <div class="container">
 
-    <div>
-        {{ question.translation }}
+    <div class="row">
+        <div class="span12">
+            {{ question.translation }}
+        </div>
     </div>
-    <div>
-        {{ question.sentence }}
+    <div class="row">
+        <div class="span12">
+            {{ question.sentence }}
+        </div>
     </div>
-    <div>
-        {{ inputData }}
+    <div class="row">
+        <div class="span12">
+            {{ inputData }}
+        </div>
     </div>
 
 
     <form action="{{ path('question') }}" method="post" novalidate name="form">
         <input type="hidden" id="hiddenid" name="id" value="" />
-        <div>
-            <button type="button" class="btn" onclick="onRetryClick()" value="Previous" >Retry</button>
-            {% if nextid %}
-                <button type="button" class="btn btn-primary" onclick="onNextClick()" value="Previous" >Next</button>
-            {% endif %}
+        <div class="row">
+            <div class="span12">
+                <button type="button" class="btn" onclick="onRetryClick()" value="Previous" >Retry</button>
+                {% if nextid %}
+                    <button type="button" class="btn btn-primary" onclick="onNextClick()" value="Previous" >Next</button>
+                {% endif %}
+            </div>
         </div>
-        <div>
-            <a href="{{ path('select') }}">select</a>
+        <div class="row">
+            <div class="span12">
+                <a href="{{ path('select') }}">select</a>
+            </div>
         </div>
     </form>
 </div>

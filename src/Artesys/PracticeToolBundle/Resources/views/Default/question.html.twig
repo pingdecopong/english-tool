@@ -3,7 +3,12 @@
 
 {% block body %}
 <div class="container">
-    {{ question.translation }}
+
+    <div class="hero-unit">
+        <p>
+        {{ question.translation }}
+        </p>
+    </div>
 
 
     <form action="{{ path('answer') }}" method="post" {{ form_enctype(form) }} novalidate >
