@@ -2,7 +2,7 @@
 {% extends '::base.html.twig'  %}
 
 {% block body %}
-
+<div class="container">
     {{ question.translation }}
 
 
@@ -23,4 +23,5 @@
             <a href="{{ path('select') }}">select</a>
         </div>
     </form>
+</div>
 {% endblock %}

@@ -2,7 +2,7 @@
 {% extends '::base.html.twig'  %}
 
 {% block body %}
-
+<div class="container">
 
     <div>
         {{ question.translation }}
@@ -27,6 +27,7 @@
             <a href="{{ path('select') }}">select</a>
         </div>
     </form>
+</div>
     <script type="text/javascript">
             function onRetryClick(){
                 var selectObject = document.getElementById('hiddenid');
